@@ -106,18 +106,19 @@ function uninstall_bot() {
     fi
 }
 
-# 请替换脚本最后这部分：
 while true; do
     show_menu
-    read -p " 请输入序号: " choice
-    # 【核心修复】利用 bash 原生功能剔除所有非数字字符
+    # 【修正】直接在这里读取，并确保清除之前可能残留的回车符
+    read -r -p " 请输入序号: " choice
+    
+    # 剔除干扰字符
     clean_choice="${choice//[^0-9]/}"
 
     case "$clean_choice" in
         1) install_bot ;;
         2) 
            if [ -f ~/bot.log ]; then
-               echo -e "${YELLOW}>>> 正在进入日志监控 (按 Ctrl+C 退出日志并返回菜单)...${NC}"
+               # 这里的日志监控已经包含了提示
                tail -f ~/bot.log
            else
                echo -e "${RED}❌ 无日志文件，请先运行安装！${NC}"
@@ -126,12 +127,8 @@ while true; do
         3) stop_bot ;;
         4) uninstall_bot ;;
         0) break ;;
-        *) 
-           if [ -z "$choice" ]; then
-               echo -e "${RED}⚠️  检测到空输入，请直接敲数字 1 后按回车${NC}"
-           else
-               echo -e "${RED}❌ 无效输入: [$choice]，请只输入数字序号${NC}"
-           fi
-           ;;
+        # 如果是空输入（只按了回车），直接跳过，不报错
+        "") continue ;; 
+        *) echo -e "${RED}❌ 无效输入: [$choice]${NC}" ;;
     esac
 done
