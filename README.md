@@ -25,31 +25,6 @@
 wget -N [https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/main/minibot.sh](https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/main/minibot.sh) && bash minibot.sh
 
 
-## 🎮 如何调戏你的机器人？
 
-部署成功后，在 Telegram 机器人对话框发送指令即可切换模型：
-
-| 输入方式 | 响应模型 | 核心优势 |
-| :--- | :--- | :--- |
-| **直接发送文字** | **Gemini 2.5 Flash** | 默认大脑，响应最快，完全免费 |
-| **`/ds` + 内容** | **DeepSeek-V3** | 国产之光，中文逻辑极强，适合写代码 |
-| **`/gpt` + 内容** | **GPT-4o** | 行业标杆，全能型助手 |
-
----
-
-## ❓ 常见问题 (FAQ)
-
-**Q: 退出 SSH 后机器人还在吗？** **A:** 在！V4.4 使用了 `setsid` 守护模式。只要不执行卸载或服务器重启，它将一直运行。
-
-**Q: 为什么 /ds 回复 API 报错？** **A:** 通常是 API 余额不足。V4.4 脚本会自动捕捉并提示 `Insufficient Balance`，请检查账户余额。
-
----
-
-## 📺 视频教程
-欢迎关注我的 YouTube 频道：**[小帆船youtube频道]**，获取更多硬核折腾指南！
-
----
-
-### ⛵ 博主运维小贴士 (物理清场指令)
 如果你之前折腾乱了，想彻底删干净重来，请执行：
 `pkill -9 python3 && rm -rf ~/minibot_main.py ~/minibot_env ~/bot.log ~/.minibot.env ~/minibot.sh`
