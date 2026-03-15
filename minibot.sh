@@ -106,14 +106,20 @@ function uninstall_bot() {
     fi
 }
 
+# 找到最后这段，替换成这个加强版
 while true; do
     show_menu
-    case \$choice in
+    # 使用 -r 并清除首尾空格
+    read -r choice
+    # 过滤掉所有非数字字符，只留数字
+    clean_choice=$(echo "$choice" | tr -cd '0-9')
+
+    case "$clean_choice" in
         1) install_bot ;;
         2) [ -f ~/bot.log ] && tail -f ~/bot.log || echo -e "${RED}无日志${NC}" ;;
         3) stop_bot ;;
         4) uninstall_bot ;;
         0) break ;;
-        *) echo -e "${RED}无效输入${NC}" ;;
+        *) echo -e "${RED}无效输入: '$choice'，请确保只输入数字并按回车${NC}" ;;
     esac
 done
