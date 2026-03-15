@@ -26,5 +26,3 @@ wget -N [https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/mai
 
 
 
-如果你之前折腾乱了，想彻底删干净重来，请执行：
-`pkill -9 python3 && rm -rf ~/minibot_main.py ~/minibot_env ~/bot.log ~/.minibot.env ~/minibot.sh`
