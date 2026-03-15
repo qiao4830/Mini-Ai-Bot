@@ -23,6 +23,3 @@
 
 ```bash
 wget -N [https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/main/minibot.sh](https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/main/minibot.sh) && bash minibot.sh
-
-
-
