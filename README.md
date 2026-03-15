@@ -24,6 +24,7 @@
 ```bash
 wget -N [https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/main/minibot.sh](https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/main/minibot.sh) && bash minibot.sh
 
+
 ## 🎮 如何调戏你的机器人？
 
 部署成功后，在 Telegram 机器人对话框发送指令即可切换模型：
