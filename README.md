@@ -22,4 +22,4 @@
 在你的 VPS 终端执行以下命令（推荐 Debian/Ubuntu）：
 
 ```bash
-wget -N [https://raw.githubusercontent.com/你的GitHub用户名/Mini-Ai-Bot/main/minibot.sh](https://raw.githubusercontent.com/qiao4830/Mini-Ai-Bot/main/minibot.sh) && bash minibot.sh
+wget -N https://raw.githubusercontent.com/qiao4830/Mini-Ai-Bot/main/minibot.sh && bash minibot.sh
